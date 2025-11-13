@@ -19,4 +19,16 @@ def custom_sort(row):
     # เอามารวมกัน (เอาตัวอักษรขึ้นก่อน ตามโจทย์กราฟที่มักเป็น ชื่อโหนด -> น้ำหนัก)
     return char + num
 
-# --- วิธีเรียก
+# --- วิธีเรียกใช้งาน ---
+
+# สร้าง List ใหม่ที่เก็บผลลัพธ์การเรียงทีละแถว
+sorted_matrix = []
+for row in matrix:
+    sorted_row = custom_sort(row) # ส่งไปเรียงทีละแถว
+    sorted_matrix.append(sorted_row)
+
+# หรือเขียนแบบสั้น (List Comprehension)
+# sorted_matrix = [custom_sort(row) for row in matrix]
+
+print("Original:", matrix)
+print("Sorted:  ", sorted_matrix)
